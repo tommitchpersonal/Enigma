@@ -27,7 +27,7 @@ namespace Enigma
             
             foreach (string letter in plainTextArray)
             {
-                if (letter == " ")
+                if (!_alphabet.Contains(letter.ToLower()))
                 {
                     cipherTextArray[counter] = letter;
                 }
