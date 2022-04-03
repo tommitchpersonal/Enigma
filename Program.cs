@@ -6,19 +6,19 @@ namespace Enigma
     {
         public static void Main(string[] args)
         {
-
-            Service selectedService = Services.Determine(args);
-
-            if (selectedService == Service.Encrypt)
-            {
-
-                System.Console.WriteLine("Please enter plaintext");
+            try {
+                System.Console.WriteLine("Please enter input text");
                 string plainText = Console.ReadLine();
-                
-            
+
+                EnigmaMachine enigmaMachine = new EnigmaMachine();
+                string cipherText = enigmaMachine.EncryptString(plainText);
+
+                System.Console.WriteLine("Output text: " + cipherText);
             }
-
-
+            catch(Exception e)
+            {
+                System.Console.WriteLine(e);
+            }
         }
     }
 }
